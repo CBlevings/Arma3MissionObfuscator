@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using Windows.Storage;
+using Windows.UI.Xaml.Controls;
+
+namespace MissionObfuscator.Views {
+    public sealed partial class RenameVariablesPage : Page, INotifyPropertyChanged {
+        public static RenameVariablesPage Current;
+
+        public RenameVariablesPage() {
+            InitializeComponent();
+            Current = this;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void Set<T>(ref T storage, T value, [CallerMemberName]string propertyName = null) {
+            if (Equals(storage, value)) {
+                return;
+            }
+
+            storage = value;
+            OnPropertyChanged(propertyName);
+        }
+
+        private void OnPropertyChanged(string propertyName) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private async void RenameVariablesButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e) {
+            Button buttonStart = (Button)sender;
+
+
+
+            if (RemoveCommentsPage.Current == null || !RemoveCommentsPage.Current.hasRan) {
+                PrintText("Feature not implemented.");
+                return;
+            }
+
+            buttonStart.IsEnabled = false;
+
+            //ShellPage.Current.navEnabled(false, typeof(RenameVariablesPage));
+            await Task.Run(() => renameAllVariables());
+        }
+
+        private async void renameAllVariables() {
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => {
+                ListRenameVariables.Items.Clear();
+            });
+
+            PrintText("Feature not implemented.");
+        }
+
+        private async void PrintText(string text) {
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => {
+                ListRenameVariables.Items.Insert(0, text);
+            });
+        }
+    }
+}

@@ -1,0 +1,20 @@
+﻿<Page x:Name="Welcome"
+    x:Class="MissionObfuscator.Views.WelcomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <TextBox HorizontalAlignment="Center" Height="53" Margin="0,23,0,0" Text="Arma 3 Mission Obfuscator" VerticalAlignment="Top" Width="750" FontSize="36" FontFamily="Gill Sans MT Condensed" FontWeight="Normal" TextAlignment="Center" IsReadOnly="True" IsTabStop="False" IsHitTestVisible="False" Background="{x:Null}" BorderBrush="{x:Null}" SelectionHighlightColorWhenNotFocused="{x:Null}" SelectionHighlightColor="{x:Null}" Foreground="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" FocusVisualPrimaryBrush="{x:Null}" />
+            <TextBox HorizontalAlignment="Center" Height="36" Margin="0,81,0,0" Text="Created by Cory Blevings" VerticalAlignment="Top" Width="750" TextAlignment="Center" FontFamily="Gill Sans MT Condensed" FontWeight="Normal" FontSize="18" IsReadOnly="True" IsTabStop="False" IsHitTestVisible="False" BorderBrush="{x:Null}" Background="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" Foreground="{x:Null}" SelectionHighlightColorWhenNotFocused="{x:Null}" SelectionHighlightColor="{x:Null}" />
+            <Button x:Name="AddDiagButton" Content="Start" HorizontalAlignment="Left" Height="47" Margin="80,556,0,0" VerticalAlignment="Top" Width="327" Click="AddDiagButton_Click" />
+            <TextBlock HorizontalAlignment="Left" Height="328" Margin="80,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" Foreground="Black" FocusVisualPrimaryBrush="Black" FontSize="16" Style="{StaticResource BodyTextBlockStyle}" Text="You can run the function below to add diag logging to all server files. These logs print when the file starts with a unique instance number, and will check to see how long they run for. It is not reccomended to push any changes made with this program to github."/>
+
+            <ListView x:Name="ListMainPage" HorizontalAlignment="Left" Height="389" Margin="446,214,0,0" VerticalAlignment="Top" Width="667" Background="#33000000" BorderBrush="#33000000" />
+
+        </Grid>
+    </Grid>
+</Page>

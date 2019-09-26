@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="MissionObfuscator.Views.RenameFoldersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Height" Value="20" />
+            <Setter Property="MinHeight" Value="20" />
+        </Style>
+    </Page.Resources>
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <Grid.BorderBrush>
+                <SolidColorBrush Color="#33000000" />
+            </Grid.BorderBrush>
+            <Button x:Name="RenameFoldersButton" Content="Start" HorizontalAlignment="Left" Height="47" Margin="35,398,0,0" VerticalAlignment="Top" Width="327" Click="RenameFoldersButton_Click" />
+            <TextBlock HorizontalAlignment="Left" Height="328" Margin="35,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" Foreground="Black" FocusVisualPrimaryBrush="Black" FontSize="16" Style="{StaticResource BodyTextBlockStyle}"><Run Text="This function removes all whitespace wherever possible. This step should be performed last." /><LineBreak /><Run /><LineBreak /><Run Text="The main benefits of this function are reduced mission size, and makes it slightly more difficult to read the files. Yes people can always just use a script to add the whitespace back, but still makes it more difficult to the average scrub." /></TextBlock>
+
+            <ListView x:Name="ListRenameFolders" HorizontalAlignment="Left" Height="620" Margin="391,42,0,0" VerticalAlignment="Top" Width="721" Background="#33000000" BorderBrush="#33000000" />
+
+        </Grid>
+    </Grid>
+</Page>
