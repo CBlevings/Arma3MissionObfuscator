@@ -20,7 +20,7 @@
                 <SolidColorBrush Color="#33000000" />
             </Grid.BorderBrush>
             <Button x:Name="RenameVariablesButton" Content="Start" HorizontalAlignment="Left" Height="47" Margin="35,398,0,0" VerticalAlignment="Top" Width="327" Click="RenameVariablesButton_Click" />
-            <TextBlock HorizontalAlignment="Left" Height="328" Margin="35,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" Foreground="Black" FocusVisualPrimaryBrush="Black" FontSize="16" Style="{StaticResource BodyTextBlockStyle}"><Run Text="This function removes all whitespace wherever possible. This step should be performed last." /><LineBreak /><Run /><LineBreak /><Run Text="The main benefits of this function are reduced mission size, and makes it slightly more difficult to read the files. Yes people can always just use a script to add the whitespace back, but still makes it more difficult to the average scrub." /></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="328" Margin="35,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" Foreground="Black" FocusVisualPrimaryBrush="Black" FontSize="16" Style="{StaticResource BodyTextBlockStyle}"><Run Text="not yet implemented" /></TextBlock>
 
             <ListView x:Name="ListRenameVariables" HorizontalAlignment="Left" Height="620" Margin="391,42,0,0" VerticalAlignment="Top" Width="721" Background="#33000000" BorderBrush="#33000000" />
 

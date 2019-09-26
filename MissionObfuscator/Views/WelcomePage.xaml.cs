@@ -65,29 +65,6 @@ namespace MissionObfuscator.Views {
                     string fileContents = streamReader.ReadToEnd();
                     inputStream.Dispose();
 
-                    /*
-
-                    	/////////
-		private _myScriptName = 'noScriptName';
-		if(!(isNil '_fnc_scriptName')) then{
-			_myScriptName = [_fnc_scriptName] param[0,'',['']];
-		};
-		private _myThisScript = 'noScriptHandle';
-		if(canSuspend) then {
-			private _myThisScript = [str(_thisScript)] param[0,'',['']];
-		};
-
-		private _myScriptNameParent = [_fnc_scriptNameParent] param[0,'',['']];
-
-		if(!(isNil 'life_monitorFunctions') && !(_myScriptName isEqualTo '') && {!(_myScriptName in life_monitorFunctions)}) exitWith {
-			life_monitorFunctions pushBack _myScriptName;
-			private _scriptMonitorIdentifier = format['%1_%2_%3', _myScriptName, diag_frameNo, random(100000)];
-			[_this, (!((_myThisScript find _myScriptName) isEqualTo -1)), _myScriptName, _myScriptNameParent, _scriptMonitorIdentifier, diag_tickTime] call life_fnc_monitorScriptHandle;
-		};
-	////////
-
-                    */
-
                     fileContents = Regex.Replace(fileContents, @"^\A(.*)$", ("		private _myScriptName = 'noScriptName';		if(!(isNil '_fnc_scriptName')) then{			_myScriptName = [_fnc_scriptName] param[0,'',['']];		};		private _myThisScript = 'noScriptHandle';		if(canSuspend) then {			private _myThisScript = [str(_thisScript)] param[0,'',['']];		};		private _myScriptNameParent = [_fnc_scriptNameParent] param[0,'',['']];		if(!(isNil 'life_monitorFunctions') && !(_myScriptName isEqualTo '') && {!(_myScriptName in life_monitorFunctions)}) exitWith {			life_monitorFunctions pushBack _myScriptName;			private _scriptMonitorIdentifier = format['%1_%2_%3', _myScriptName, diag_frameNo, random(100000)];			[_this, (!((_myThisScript find _myScriptName) isEqualTo -1)), _myScriptName, _myScriptNameParent, _scriptMonitorIdentifier, diag_tickTime] call life_fnc_monitorScriptHandle;		};" + Environment.NewLine + "$1"), RegexOptions.Multiline);
                     //fileContents = Regex.Replace(fileContents, "`", "");
 
